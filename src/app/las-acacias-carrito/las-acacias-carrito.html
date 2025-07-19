@@ -1,6 +1,8 @@
+<div class="header-carrito">
 <h3>carrito de compra</h3>
+</div>
 <ul>
- @for (producto of listaDeCompra$ | async; track producto.nombre) {
+ @for (producto of listaDeCompra$ | async; track producto.id) {
 <li>{{producto.nombre}} :{{producto.cantidad}}</li>
 } 
 </ul>

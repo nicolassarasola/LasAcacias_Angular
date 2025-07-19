@@ -5,5 +5,6 @@ export interface Producto {
     precio:number;
     stock:number;
     oferta:boolean;
-    cantidad:number;  
+    cantidad:number;
+    id: number;  
 }

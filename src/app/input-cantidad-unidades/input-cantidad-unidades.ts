@@ -16,19 +16,21 @@ export class InputCantidadUnidades {
     }    
   }
 
-restarCantidad(producto : Producto): void{
+  restarCantidad(producto : Producto): void{
     if(producto.cantidad > 0){
       producto.cantidad--;
     } 
   }
-chequearCantidad(producto: Producto): void {
+  chequearCantidad(producto: Producto): void {
+    
     if(producto.cantidad > producto.stock) {
       alert("limite de stock");
+      producto.cantidad=0;
     }
     if(producto.cantidad < 0) {
       alert("limite inferior");
+      producto.cantidad=0;
     }
-    
-    producto.cantidad = 0;
+
 }
 }

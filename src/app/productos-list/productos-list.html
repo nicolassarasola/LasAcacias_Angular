@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    @for (producto of productos; track producto.nombre) { 
+    @for (producto of productos; track producto.id) { 
     <tr>
       <td><img [src]="producto.imagen" [alt]="producto.nombre" /></td> 
       <td>{{producto.nombre}}</td>

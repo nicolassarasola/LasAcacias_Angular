@@ -12,12 +12,20 @@ export class CarritoProductos {
   listaDeCompra : BehaviorSubject <Producto[]> = new BehaviorSubject(this._listaDeCompra);
 
   agregarAlCarro(producto: Producto) {
+//busca item que cumpla igualdad
+    let item : Producto |undefined = this._listaDeCompra.find((v1) =>v1.id==producto.id)
 
-    if(producto.cantidad!=0){
-    this._listaDeCompra.push({ ... producto})
+      if(!item){
+        //si no existe
+        if(producto.cantidad!=0){
+        this._listaDeCompra.push({ ... producto})
     
-    this.listaDeCompra.next(this._listaDeCompra);
-    }
+        this.listaDeCompra.next(this._listaDeCompra);
+        }
 
+    }else{
+     
+      item.cantidad+=producto.cantidad
+    }
   }
 }
