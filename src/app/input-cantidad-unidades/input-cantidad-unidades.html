@@ -1,0 +1,9 @@
+<div class="contenedor-contador">
+    <input type="number" [(ngModel)]="producto.cantidad" (focusout)="chequearCantidad(producto)" />
+
+    <div class="suma-resta">
+        <button type="button" class="btn btn-danger" (click)="restarCantidad(producto)">-</button>
+        <button type="button" class="btn btn-success" (click)="sumarCantidad(producto)">+</button>
+    </div>
+</div>  
+   
